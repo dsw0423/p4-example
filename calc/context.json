@@ -1,0 +1,138 @@
+{
+  "program_name" : "calc",
+  "build_date" : "Mon Oct 14 18:02:09 2024",
+  "compile_command" : "p4c-dpdk --arch psa --p4runtime-files /root/p4-examples/calc/p4Info.txt --bf-rt-schema /root/p4-examples/calc/bf-rt.json --context /root/p4-examples/calc/context.json -o /root/p4-examples/calc/calc.spec /root/p4-examples/calc/calc.p4",
+  "compiler_version" : "0.1 (SHA: a73a7fc2d BUILD: RELEASE)",
+  "schema_version" : "0.1",
+  "target" : "DPDK",
+  "tables" : [
+    {
+      "name" : "ingress.calculate",
+      "target_name" : "calculate",
+      "direction" : "ingress",
+      "handle" : 36176136,
+      "table_type" : "match",
+      "size" : 1048576,
+      "p4_hidden" : false,
+      "add_on_miss" : false,
+      "idle_timeout_with_auto_delete" : false,
+      "stateful_table_refs" : [],
+      "statistics_table_refs" : [],
+      "meter_table_refs" : [],
+      "match_key_fields" : [
+        {
+          "name" : "hdr.p4calc.op",
+          "instance_name" : "hdr.p4calc",
+          "field_name" : "op",
+          "match_type" : "exact",
+          "start_bit" : 0,
+          "bit_width" : 8,
+          "bit_width_full" : 8,
+          "position" : 0
+        }
+      ],
+      "actions" : [
+        {
+          "name" : "ingress.operation_add",
+          "target_name" : "ingress.operation_add",
+          "handle" : 25586925,
+          "constant_default_action" : false,
+          "is_compiler_added_action" : false,
+          "allowed_as_hit_action" : true,
+          "allowed_as_default_action" : false,
+          "p4_parameters" : []
+        },
+        {
+          "name" : "ingress.operation_sub",
+          "target_name" : "ingress.operation_sub",
+          "handle" : 30016945,
+          "constant_default_action" : false,
+          "is_compiler_added_action" : false,
+          "allowed_as_hit_action" : true,
+          "allowed_as_default_action" : false,
+          "p4_parameters" : []
+        },
+        {
+          "name" : "ingress.operation_and",
+          "target_name" : "ingress.operation_and",
+          "handle" : 30208523,
+          "constant_default_action" : false,
+          "is_compiler_added_action" : false,
+          "allowed_as_hit_action" : true,
+          "allowed_as_default_action" : false,
+          "p4_parameters" : []
+        },
+        {
+          "name" : "ingress.operation_or",
+          "target_name" : "ingress.operation_or",
+          "handle" : 26008361,
+          "constant_default_action" : false,
+          "is_compiler_added_action" : false,
+          "allowed_as_hit_action" : true,
+          "allowed_as_default_action" : false,
+          "p4_parameters" : []
+        },
+        {
+          "name" : "ingress.operation_xor",
+          "target_name" : "ingress.operation_xor",
+          "handle" : 23018849,
+          "constant_default_action" : false,
+          "is_compiler_added_action" : false,
+          "allowed_as_hit_action" : true,
+          "allowed_as_default_action" : false,
+          "p4_parameters" : []
+        },
+        {
+          "name" : "ingress.drop",
+          "target_name" : "ingress.drop_1",
+          "handle" : 33281717,
+          "constant_default_action" : true,
+          "is_compiler_added_action" : false,
+          "allowed_as_hit_action" : true,
+          "allowed_as_default_action" : true,
+          "p4_parameters" : []
+        }
+      ],
+      "match_attributes" : {
+        "stage_tables" : [
+          {
+            "action_format" : [
+              {
+                "action_name" : "ingress.operation_add",
+                "action_handle" : 25586925,
+                "immediate_fields" : []
+              },
+              {
+                "action_name" : "ingress.operation_sub",
+                "action_handle" : 30016945,
+                "immediate_fields" : []
+              },
+              {
+                "action_name" : "ingress.operation_and",
+                "action_handle" : 30208523,
+                "immediate_fields" : []
+              },
+              {
+                "action_name" : "ingress.operation_or",
+                "action_handle" : 26008361,
+                "immediate_fields" : []
+              },
+              {
+                "action_name" : "ingress.operation_xor",
+                "action_handle" : 23018849,
+                "immediate_fields" : []
+              },
+              {
+                "action_name" : "ingress.drop",
+                "action_handle" : 33281717,
+                "immediate_fields" : []
+              }
+            ]
+          }
+        ]
+      },
+      "default_action_handle" : 33281717
+    }
+  ],
+  "externs" : []
+}

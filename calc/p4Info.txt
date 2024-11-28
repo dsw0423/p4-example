@@ -1,0 +1,80 @@
+pkg_info {
+  arch: "psa"
+}
+tables {
+  preamble {
+    id: 36176136
+    name: "ingress.calculate"
+    alias: "calculate"
+  }
+  match_fields {
+    id: 1
+    name: "hdr.p4calc.op"
+    bitwidth: 8
+    match_type: EXACT
+  }
+  action_refs {
+    id: 25586925
+  }
+  action_refs {
+    id: 30016945
+  }
+  action_refs {
+    id: 30208523
+  }
+  action_refs {
+    id: 26008361
+  }
+  action_refs {
+    id: 23018849
+  }
+  action_refs {
+    id: 33281717
+  }
+  const_default_action_id: 33281717
+  size: 1048576
+}
+actions {
+  preamble {
+    id: 33281717
+    name: "ingress.drop"
+    alias: "drop"
+  }
+}
+actions {
+  preamble {
+    id: 25586925
+    name: "ingress.operation_add"
+    alias: "operation_add"
+  }
+}
+actions {
+  preamble {
+    id: 30016945
+    name: "ingress.operation_sub"
+    alias: "operation_sub"
+  }
+}
+actions {
+  preamble {
+    id: 30208523
+    name: "ingress.operation_and"
+    alias: "operation_and"
+  }
+}
+actions {
+  preamble {
+    id: 26008361
+    name: "ingress.operation_or"
+    alias: "operation_or"
+  }
+}
+actions {
+  preamble {
+    id: 23018849
+    name: "ingress.operation_xor"
+    alias: "operation_xor"
+  }
+}
+type_info {
+}

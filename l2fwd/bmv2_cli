@@ -1,0 +1,4 @@
+table_add ingress.l2fwd_table ingress.l2fwd a0:36:9f:d8:97:8a => 0
+
+table_add ingress.l2fwd_table ingress.l2fwd a0:36:9f:d8:97:8b => 1
+

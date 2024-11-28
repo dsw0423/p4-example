@@ -1,0 +1,70 @@
+pkg_info {
+  arch: "psa"
+}
+tables {
+  preamble {
+    id: 43334800
+    name: "ingress.l2fwd_table"
+    alias: "l2fwd_table"
+  }
+  match_fields {
+    id: 1
+    name: "headers.ethernet.dst_addr"
+    bitwidth: 48
+    match_type: EXACT
+  }
+  action_refs {
+    id: 24436530
+  }
+  action_refs {
+    id: 33281717
+  }
+  size: 1024
+}
+actions {
+  preamble {
+    id: 24436530
+    name: "ingress.l2fwd"
+    alias: "l2fwd"
+  }
+  params {
+    id: 1
+    name: "port_out"
+    bitwidth: 32
+  }
+}
+actions {
+  preamble {
+    id: 33281717
+    name: "ingress.drop"
+    alias: "drop"
+  }
+}
+controller_packet_metadata {
+  preamble {
+    id: 78842819
+    name: "packet_out"
+    alias: "packet_out"
+    annotations: "@controller_header(\"packet_out\")"
+  }
+  metadata {
+    id: 1
+    name: "egress_port"
+    bitwidth: 32
+  }
+}
+controller_packet_metadata {
+  preamble {
+    id: 69098127
+    name: "packet_in"
+    alias: "packet_in"
+    annotations: "@controller_header(\"packet_in\")"
+  }
+  metadata {
+    id: 1
+    name: "ingress_port"
+    bitwidth: 32
+  }
+}
+type_info {
+}

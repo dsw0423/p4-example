@@ -1,0 +1,10 @@
+.vscode
+*.bak
+*.log
+*.so
+*.c
+*.o
+pipeline
+*.h
+*.log
+zlog*
