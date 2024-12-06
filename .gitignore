@@ -8,3 +8,4 @@ pipeline
 *.h
 *.log
 zlog*
+tls/certs
