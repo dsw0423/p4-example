@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source /root/p4-example/setup_env.sh
+
 killall infrap4d
 sleep 1
 
